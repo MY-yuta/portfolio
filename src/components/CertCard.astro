@@ -1,0 +1,57 @@
+---
+interface Props {
+  name: string;
+  date: string;
+  badgeId?: string;
+}
+
+const { name, date, badgeId } = Astro.props;
+---
+
+<div class="cert-card">
+  {
+    badgeId && (
+      <div
+        class="cert-badge"
+        data-iframe-width="200"
+        data-iframe-height="200"
+        data-share-badge-id={badgeId}
+        data-share-badge-host="https://www.credly.com"
+      />
+    )
+  }
+  <div class="cert-info">
+    <p class="cert-name">{name}</p>
+    <p class="cert-date">{date}</p>
+  </div>
+</div>
+
+<script is:inline src="https://cdn.credly.com/assets/utilities/embed.js" async
+></script>
+
+<style>
+  .cert-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .cert-badge {
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .cert-name {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-heading);
+    color: var(--color-text-primary);
+    margin: 0 0 4px;
+  }
+
+  .cert-date {
+    font-size: var(--font-size-tag);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,142 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  date: string;
+  title: string;
+  description?: string;
+  tags?: string[];
+  url?: string;
+  images?: ImageMetadata[];
+}
+
+const { date, title, description, tags, url, images } = Astro.props;
+---
+
+<div class="timeline-entry">
+  <p class="entry-date">{date}</p>
+  <p class="entry-title">{title}</p>
+  {description && <p class="entry-description">{description}</p>}
+  {
+    url && (
+      <p class="entry-url">
+        外部リンク：
+        <a href={url} target="_blank" rel="noopener">
+          {url}
+        </a>
+      </p>
+    )
+  }
+  {
+    images && images.length > 0 && (
+      <div class:list={['entry-images', { single: images.length === 1 }]}>
+        {images.map((img, i) => (
+          <Image src={img} alt={`${title} ${i + 1}`} />
+        ))}
+      </div>
+    )
+  }
+  {
+    tags && tags.length > 0 && (
+      <div class="entry-tags">
+        {tags.map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .timeline-entry {
+    margin-bottom: var(--spacing-entry);
+  }
+
+  .timeline-entry:last-child {
+    margin-bottom: 0;
+  }
+
+  .entry-date {
+    font-size: var(--font-size-body);
+    color: var(--color-text-muted);
+    margin: 0 0 4px;
+  }
+
+  .entry-title {
+    font-size: var(--font-size-entry-title);
+    font-weight: var(--font-weight-heading);
+    color: var(--color-text-primary);
+    margin: 0 0 6px;
+  }
+
+  .entry-url {
+    font-size: var(--font-size-tag);
+    color: var(--color-text-muted);
+    margin: 0 0 8px;
+  }
+
+  .entry-url a {
+    color: var(--color-text-muted);
+    text-decoration: underline;
+  }
+
+  .entry-url a:hover {
+    color: var(--color-text-primary);
+  }
+
+  .entry-description {
+    font-size: var(--font-size-body);
+    color: var(--color-text-muted);
+    line-height: var(--line-height-body);
+    margin: 0 0 8px;
+  }
+
+  .entry-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: var(--font-size-tag);
+    padding: 2px 8px;
+    background: var(--color-border);
+    border-radius: var(--radius-tag);
+    color: var(--color-text-muted);
+    margin-top: 5px;
+  }
+
+  .entry-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .entry-images.single {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    max-width: 50%;
+    margin-inline: auto;
+  }
+
+  .entry-images :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left top;
+    border: var(--border);
+    border-radius: var(--radius-card);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  @media (max-width: 768px) {
+    .entry-images {
+      grid-template-columns: 1fr;
+    }
+
+    .entry-images :global(img) {
+      height: auto;
+    }
+  }
+</style>
