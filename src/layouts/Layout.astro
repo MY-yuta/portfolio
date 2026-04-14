@@ -9,6 +9,7 @@
   </head>
   <body>
     <slot />
+    <script is:inline src="https://cdn.credly.com/assets/utilities/embed.js" async></script>
   </body>
 </html>
 
@@ -77,6 +78,7 @@
     line-height: var(--line-height-body);
     color: var(--color-text-primary);
     background: var(--color-bg);
+    transition: background 0.3s ease, color 0.3s ease;
     min-height: 100dvh;
     max-width: 800px;
     margin: 0 auto;
@@ -102,6 +104,5 @@
     --color-text-muted: #a6a6a6;
     --color-border: #333;
     --border: 0.5px solid var(--color-border);
-    transition: background 0.3s ease, color 0.3s ease;
   }
 </style>

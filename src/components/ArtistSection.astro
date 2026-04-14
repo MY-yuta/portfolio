@@ -1,0 +1,278 @@
+---
+import { Image } from 'astro:assets';
+import us1 from '../assets/UnknownSouls1.jpg';
+import us2 from '../assets/UnknownSouls2.jpg';
+import us3 from '../assets/UnknownSouls3.jpg';
+import us4 from '../assets/UnknownSouls4.jpg';
+import p1 from '../assets/portolio1.png';
+import p2 from '../assets/portolio2.png';
+import p3 from '../assets/portolio3.jpg';
+import p4 from '../assets/portolio4.png';
+import bg1 from '../assets/background1.png';
+import bg2 from '../assets/background2.png';
+import bg3 from '../assets/background3.png';
+import mv1 from '../assets/movie1.png';
+import mv2 from '../assets/Movie2.png';
+---
+
+<section class="artist" data-section="artist" hidden>
+  <div class="section-block">
+    <div class="section-heading">
+      <h2 class="section-title">Game Development</h2>
+      <p class="section-subtitle">ゲーム制作</p>
+    </div>
+    <div class="entries">
+      <div class="entry">
+        <p class="entry-date">2021年</p>
+        <p class="entry-title">Unknown Souls: Prologue</p>
+        <p class="entry-description">
+          Unity Youth Creator Cup 2021 出場作品。 3人チーム「Travelers
+          Productions」として制作。
+          3DCGモデリング、アニメーションやUnityでのビジュアルなど幅広く担当。
+          ブロンズアワード獲得。
+        </p>
+        <p class="entry-url">
+          外部リンク：<a
+            href="https://unityroom.com/games/unknown_souls"
+            target="_blank"
+            rel="noopener">https://unityroom.com/games/unknown_souls</a
+          >
+        </p>
+        <div class="image-grid two-col">
+          <Image src={us1} alt="Unknown Souls 1" />
+          <Image src={us2} alt="Unknown Souls 2" />
+          <Image src={us3} alt="Unknown Souls 3" />
+          <Image src={us4} alt="Unknown Souls 4" />
+        </div>
+        <div class="entry-tags">
+          <span class="tag">Unity(HDRP)</span>
+          <span class="tag">Blender</span>
+          <span class="tag">Substance Painter</span>
+        </div>
+      </div>
+      <div class="entry">
+        <p class="entry-date">2024年12月 - 現在</p>
+        <p class="entry-title">RE:25</p>
+        <p class="entry-description">
+          再度友人を集め、より大規模なチーム(約10名)でゲーム開発を行っています。ディレクター/モデラー/アニメーター/アーティストの取りまとめを担当。
+        </p>
+        <div class="entry-tags">
+          <span class="tag">Unity(HDRP)</span>
+          <span class="tag">Blender</span>
+          <span class="tag">Substance Painter</span>
+          <span class="tag">CC4</span>
+          <span class="tag">iClone 8</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section-block">
+    <div class="section-heading">
+      <h2 class="section-title">3D Works</h2>
+      <p class="section-subtitle">3D制作</p>
+    </div>
+    <div class="entries">
+      <div class="entry">
+        <p class="entry-date">2024年</p>
+        <p class="entry-title">漫画背景3D制作</p>
+        <p class="entry-description">
+          Blenderによる背景モデリングと、線画の出力。
+        </p>
+        <div class="image-grid two-col">
+          <Image src={bg1} alt="background-art 1" />
+          <Image src={bg2} alt="background-art 2" />
+          <Image src={bg3} alt="background-art 3" />
+        </div>
+      </div>
+      <div class="entry">
+        <p class="entry-date">2025年 - 現在</p>
+        <p class="entry-title">サークルでの映像制作</p>
+        <p class="entry-description">
+          所属しているサークルで映像を制作。2Dイラストに合わせた3D背景の制作や、撮影動画へのVFX合成を担当。
+        </p>
+        <div class="image-grid two-col">
+          <Image src={mv1} alt="movie-shot 1" />
+          <Image src={mv2} alt="movie-shot 2" />
+          <Image src={mv3} alt="movie-shot 3" />
+        </div>
+        <div class="entry-tags">
+          <span class="tag">Blender</span>
+          <span class="tag">DavinchResolve</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section-block">
+    <div class="section-heading">
+      <h2 class="section-title">Gallery</h2>
+      <p class="section-subtitle">作品ギャラリー</p>
+    </div>
+    <p class="gallery-intro">
+      メインはBlenderとSubstancePainter。
+      Maya/Unity/UE5/CharacterCreater4/Iclone8なども使います。
+    </p>
+    <div class="image-grid two-col">
+      <Image src={p1} alt="art 1" />
+      <Image src={p2} alt="art 2" />
+      <Image src={p3} alt="art 3" />
+      <Image src={p4} alt="art 4" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .artist {
+    padding: var(--spacing-section) 0;
+  }
+
+  .section-block {
+    margin-bottom: 50px;
+  }
+
+  .section-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .section-title {
+    font-size: 40px;
+    font-weight: var(--font-weight-heading);
+    color: var(--color-accent);
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .section-subtitle {
+    font-size: 20px;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    width: 80%;
+    margin: 40px auto;
+  }
+
+  .entry-date {
+    font-size: var(--font-size-body);
+    color: var(--color-text-muted);
+    margin: 0 0 4px;
+  }
+
+  .entries {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-entry);
+    margin-bottom: var(--spacing-section);
+  }
+
+  .entry-title {
+    font-size: var(--font-size-entry-title-Artist);
+    font-weight: var(--font-weight-heading);
+    color: var(--color-text-primary);
+    margin: 0 0 6px;
+  }
+
+  .entry-description {
+    font-size: var(--font-size-body);
+    color: var(--color-text-muted);
+    line-height: var(--line-height-body);
+    margin: 0 0 8px;
+  }
+
+  .entry-url {
+    font-size: var(--font-size-tag);
+    color: var(--color-text-muted);
+    margin: 0 0 8px;
+  }
+
+  .entry-url a {
+    color: var(--color-text-muted);
+    text-decoration: underline;
+  }
+
+  .entry-url a::after {
+    content: ' ↗';
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .entry-url a:hover {
+    color: var(--color-text-primary);
+  }
+
+  .entry-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: var(--font-size-tag);
+    padding: 2px 8px;
+    background: var(--color-border);
+    border-radius: var(--radius-tag);
+    color: var(--color-text-muted);
+    margin-top: 5px;
+  }
+
+  .gallery-intro {
+    font-size: var(--font-size-body);
+    color: var(--color-text-muted);
+    line-height: var(--line-height-body);
+    margin: 0 0 24px;
+  }
+
+  .image-grid {
+    display: grid;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .image-grid :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: var(--border);
+    border-radius: var(--radius-card);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .image-grid.two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .image-grid.three-col {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 32px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+    }
+
+    .image-grid.two-col,
+    .image-grid.three-col {
+      grid-template-columns: 1fr;
+    }
+
+    .image-grid :global(img) {
+      height: auto;
+    }
+  }
+</style>

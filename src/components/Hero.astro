@@ -86,7 +86,7 @@
     background: transparent;
     color: var(--color-text-primary);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
 
   .tab:hover {
@@ -150,6 +150,8 @@
       sections.forEach((s) => {
         s.hidden = s.dataset.section !== target;
       });
+
+      document.body.classList.toggle('dark', target === 'artist');
     });
   });
 </script>

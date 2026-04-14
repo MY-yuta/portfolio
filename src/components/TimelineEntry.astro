@@ -135,6 +135,10 @@ const { date, title, description, tags, url, images } = Astro.props;
       grid-template-columns: 1fr;
     }
 
+    .entry-images.single {
+      max-width: 100%;
+    }
+
     .entry-images :global(img) {
       height: auto;
     }
